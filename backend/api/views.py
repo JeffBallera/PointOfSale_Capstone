@@ -7,6 +7,7 @@ from rest_framework import views
 def home_view(request):
     return render(request, 'index.html')
 
+#Inventory Views
 class InventoryListCreateView(generics.ListCreateAPIView):
     queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
