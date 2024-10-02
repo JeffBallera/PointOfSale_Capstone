@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework import views
 
 def home_view(request):
-    return render(request, 'index.html')
+    return render(request, 'indeX.html')
 
 #Inventory Views
 class InventoryListCreateView(generics.ListCreateAPIView):
