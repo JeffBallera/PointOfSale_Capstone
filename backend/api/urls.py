@@ -4,6 +4,16 @@ from . import views
 urlpatterns = [
     path('', views.home_view, name='home-view'),
 
+    path('', views.Sidebar_view, name='home'),
+    path('AddMaterial/', views.AddMaterial_view, name='AddMaterial'),
+    path('AddProduct/', views.AddProduct_view, name='AddProduct'),
+    # dropdown buttons
+    path('ManageMaterial/', views.ManageMaterial_view, name='ManageMaterial'),
+    path('ManageOrder/', views.ManageOrder_view, name='ManageOrder'),
+    path('ManageProduct/', views.ManageProduct_view, name='ManageProduct'),
+    path('PlaceOrder/', views.PlaceOrder_view, name='PlaceOrder'),
+    
+
     path('inventory/', views.InventoryListCreateView.as_view(), name='inventory-list'),
     path('inventory/<int:pk>/', views.InventoryDetailView.as_view(), name='inventory-detail'),
 

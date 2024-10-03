@@ -7,6 +7,28 @@ from rest_framework import views
 def home_view(request):
     return render(request, 'indeX.html')
 
+def Sidebar_view(request):
+    return render(request, 'Sidebar.html')
+
+def AddMaterial_view(request):
+    return render(request, 'AddMaterial.html')
+
+def AddProduct_view(request):
+    return render(request, 'AddProduct.html')
+
+def ManageMaterial_view(request):
+    return render(request, 'ManageMaterial.html')
+
+# Dropdown Button Components
+def ManageOrder_view(request):
+    return render(request, 'ManageOrder.html')
+
+def ManageProduct_view(request):
+    return render(request, 'ManageProduc.html')
+
+def PlaceOrder_view(request):
+    return render(request, 'PlaceOrder.html')
+
 #Inventory Views
 class InventoryListCreateView(generics.ListCreateAPIView):
     queryset = Inventory.objects.all()
