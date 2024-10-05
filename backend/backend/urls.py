@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Default Route --> Base Route
     path("", include("api.urls")),
 ]

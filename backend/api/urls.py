@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home_view, name='home-view'),
+    # Base Route
+    path('home', views.home_view, name='home-view'),
 
     path('', views.Sidebar_view, name='home'),
     path('AddMaterial/', views.AddMaterial_view, name='AddMaterial'),
