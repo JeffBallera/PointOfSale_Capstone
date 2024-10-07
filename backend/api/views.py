@@ -4,30 +4,41 @@ from .serializers import *
 from django.shortcuts import render
 from rest_framework import views
 
-def home_view(request):
-    return render(request, 'indeX.html')
-
+# Renders the Sidebar page
 def Sidebar_view(request):
     return render(request, 'Sidebar.html')
 
+# Renders the AddMaterial page
 def AddMaterial_view(request):
     return render(request, 'AddMaterial.html')
 
+# Renders the AddProduct page
 def AddProduct_view(request):
     return render(request, 'AddProduct.html')
 
+# Renders the Base page (could be your base template)
+def Base_view(request):
+    return render(request, 'Base.html')
+
+# Renders the ManageMaterial page
 def ManageMaterial_view(request):
     return render(request, 'ManageMaterial.html')
 
-# Dropdown Button Components
+# Renders the ManageOrder page
 def ManageOrder_view(request):
     return render(request, 'ManageOrder.html')
 
+# Renders the ManageProduct page
 def ManageProduct_view(request):
-    return render(request, 'ManageProduc.html')
+    return render(request, 'ManageProduct.html')
 
+# Renders the PlaceOrder page
 def PlaceOrder_view(request):
     return render(request, 'PlaceOrder.html')
+
+# Home view, if you have one
+def home_view(request):
+    return render(request, 'index.html')  # This should match your 'home' page template name
 
 #Inventory Views
 class InventoryListCreateView(generics.ListCreateAPIView):

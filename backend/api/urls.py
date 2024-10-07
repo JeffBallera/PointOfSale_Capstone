@@ -3,17 +3,16 @@ from . import views
 
 urlpatterns = [
     # Base Route
-    path('home', views.home_view, name='home-view'),
-
-    path('', views.Sidebar_view, name='home'),
-    path('AddMaterial/', views.AddMaterial_view, name='AddMaterial'),
-    path('AddProduct/', views.AddProduct_view, name='AddProduct'),
-    # dropdown buttons
-    path('ManageMaterial/', views.ManageMaterial_view, name='ManageMaterial'),
-    path('ManageOrder/', views.ManageOrder_view, name='ManageOrder'),
-    path('ManageProduct/', views.ManageProduct_view, name='ManageProduct'),
-    path('PlaceOrder/', views.PlaceOrder_view, name='PlaceOrder'),
+     path('home/', views.home_view, name='home-view'),  # Home page view
     
+    path('', views.Sidebar_view, name='sidebar'),  # Sidebar
+    path('AddMaterial/', views.AddMaterial_view, name='add-material'),
+    path('AddProduct/', views.AddProduct_view, name='add-product'),
+    path('Base/', views.Base_view, name='base'),
+    path('ManageMaterial/', views.ManageMaterial_view, name='manage-material'),
+    path('ManageOrder/', views.ManageOrder_view, name='manage-order'),
+    path('ManageProduct/', views.ManageProduct_view, name='manage-product'),
+    path('PlaceOrder/', views.PlaceOrder_view, name='place-order'),
 
     path('inventory/', views.InventoryListCreateView.as_view(), name='inventory-list'),
     path('inventory/<int:pk>/', views.InventoryDetailView.as_view(), name='inventory-detail'),

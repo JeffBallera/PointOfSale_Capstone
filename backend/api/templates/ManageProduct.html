@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Management</title>
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="ManageProduct.css"> <!-- Update this with the path to your CSS file -->
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+        <link rel="stylesheet" href="{% static 'ManageProduct.css' %}">
+{% endblock %}
+
+{% block content %}
 
     <div class="container mt-4">
         <!-- PRODUCT MANAGEMENT SECTION -->
@@ -30,19 +24,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Rows will be added here dynamically -->
+                        <!-- Django template loop to generate product rows dynamically -->
+                        {% for product in products %}
+                        <tr>
+                            <td>{{ product.InventoryID }}</td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.category }}</td>
+                            <td>{{ product.description }}</td>
+                            <td>{{ product.unit_price }}</td>
+                            <td>{{ product.comments }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center">No products found</td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+        <script src="{% static 'js/ManageProduct.js' %}" defer></script>
+    {% endblock %}
     
-    <!-- External JS -->
-    <script src="script.js"></script> <!-- Update this with the path to your JS file -->
-</body>
-</html>
