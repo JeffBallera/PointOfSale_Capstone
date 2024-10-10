@@ -1,3 +1,4 @@
+
 /* Order Status Boxes */
 .order-status-container {
     display: flex;
@@ -34,11 +35,10 @@
     padding: 8px; /* Reduced padding */
     border-radius: 4px; /* Reduced border radius */
     margin-bottom: px; /* Reduced margin */
-    width: 1000px; /* Set a specific width */
-	margin: 0 auto 10px; /* Center horizontally and add margin at the bottom */
+    width: 800px; /* Set a specific width */
+    margin-left: 380px;
 
 }
-
 
 /* Order Status Boxes */
 .order-status-box {
@@ -73,8 +73,15 @@
 /* Search Bar */
 .search-bar {
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 4px;
+    border: 2px solid #000000; /* Black border */
+
+}
+
+.orders-section h2 {
+    font-size: 28px;
+    color: #7b4e83; /* Purple heading */
+    font-weight: 700;
 }
 
 /* Orders Table */
@@ -87,6 +94,7 @@
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+
 }
 
 .orders-table th {
@@ -99,31 +107,35 @@
 }
 
 
-/* Orders Section */
 .orders-section {
-    background-color: #f9f9f9;
+    background-color: #fff; /* Background color */
     padding: 30px;
     border-radius: 8px;
     max-width: 90%; /* Reduce the width of the container */
     margin: 50px auto 20px; /* Center the section horizontally and add top margin */
-    /* Ensure it is centered horizontally */
     display: flex;
     flex-direction: column;
+    margin-left: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for some depth */
+
 }
+
 
 .order-container {
     position: relative;
-    width: 800px;
-    background-color: #61396f; /* Your desired background color */
-    color: #f8f8ff; /* Text color */
+    width: 700px;
+    background-color: #61396f;
+    color: #f8f8ff;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px auto;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: pointer; /* Pointer cursor on hover */
     display: flex; /* Add flex to control layout */
     flex-direction: column; /* Align items in a column */
+    margin-left: 410px;
+    
 }
 
 
@@ -133,7 +145,7 @@
     background-color: transparent;
     border-radius: 8px;
     margin-top: 10px;
+    color: #000;
     text-align: left;
 	color: #f8f8ff;
-	font-size: larger;
 }

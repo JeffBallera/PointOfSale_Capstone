@@ -3,18 +3,21 @@ from . import views
 
 urlpatterns = [
     # Base Route
-     path('home/', views.home_view, name='home-view'),  # Home page view
-    
-    path('', views.Sidebar_view, name='sidebar'),  # Sidebar
-    path('AddMaterial/', views.AddMaterial_view, name='add-material'),
-    path('AddProduct/', views.AddProduct_view, name='add-product'),
-    path('Base/', views.Base_view, name='base'),
-    path('ManageMaterial/', views.ManageMaterial_view, name='manage-material'),
-    path('ManageOrder/', views.ManageOrder_view, name='manage-order'),
-    path('ManageProduct/', views.ManageProduct_view, name='manage-product'),
-    path('PlaceOrder/', views.PlaceOrder_view, name='place-order'),
+    path('index', views.index_view, name='index-view'),
 
-    path('inventory/', views.InventoryListCreateView.as_view(), name='inventory-list'),
+    path('', views.Sidebar_view, name='home'),
+    path('AddMaterial/', views.AddMaterial_view, name='AddMaterial'),
+    path('AddProduct/', views.AddProduct_view, name='AddProduct'),
+    path('ManageMaterial/', views.ManageMaterial_view, name='ManageMaterial'),
+    path('ManageOrder/', views.ManageOrder_view, name='ManageOrder'),
+    path('ManageProduct/', views.ManageProduct_view, name='ManageProducts'),
+    path('PlaceOrder/', views.PlaceOrder_view, name='PlacedOrder'),
+    path('KitchenDisplay/', views.KitchenDisplay_view, name='KitchenDisplay'),
+    path('AddSupplier/', views.AddSupplier_view, name='AddSupplier'),
+    path('ManageSupplier/', views.ManageSupplier_view, name='ManageSupplier'),
+    path('ExpiryDates/', views.ExpiryDates_view, name='ExpiryDates'),
+
+    path('inventory/', views.InventoryListCreateView.as_view(), name='inventory-list-create'),
     path('inventory/<int:pk>/', views.InventoryDetailView.as_view(), name='inventory-detail'),
 
     path('suppliers/', views.SupplierListCreateView.as_view(), name='supplier-list'),

@@ -7,6 +7,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #ffffff;
+    margin-left: 300px;
 }
 
 .table-container h2 {
@@ -16,6 +17,7 @@
     font-weight: 700;
 }
 
+/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -23,26 +25,19 @@ table {
     color: white; /* White text for contrast */
 }
 
-table th, table td {
+/* Targeting table headers specifically */
+table th {
+    background-color: #7b4e83 !important; /* Purple background */
+    color: white !important; /* White text */
     padding: 15px;
     text-align: center;
-    border: 1px solid white; /* White borders */
+    font-weight: bold; /* Make it bold */
 }
 
-table th {
-    background-color: #5e3b62; /* Darker purple for the header */
-    color: #fff;
-}
-
-th {
-    background-color: #7b4e83;
-    color: #ffffff;
-}
-
+/* Alternating Row Colors */
 table tr:nth-child(even) {
     background-color: #9b72a1; /* Lighter purple for alternating rows */
 }
-
 
 #edit-button {
     background-color: #7b4e83;
@@ -64,6 +59,7 @@ table tr:nth-child(even) {
     background: #f8f8f8;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 460px;
 }
 
 .form-container h2 {

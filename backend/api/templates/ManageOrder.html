@@ -1,8 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'Base.html' %}
 {% load static %}
 
 {% block extra_css %}
-        <link rel="stylesheet" href="{% static 'ManageOrder.css' %}">
+<link rel="stylesheet" href="{% static 'css/ManageOrders.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -12,14 +12,14 @@
     <div class="container mt-5">
         <!-- Order Status Boxes -->
         <div class="order-status-container">
-            <div class="order-status-box">Order Placed: {{ order_placed_count }}</div>
-            <div class="order-status-box">Order Shipped: {{ order_shipped_count }}</div>
-            <div class="order-status-box">Order Completed: {{ order_completed_count }}</div>
+            <div class="order-status-box">Order Placed: 10</div> <!-- Example value for order_placed_count -->
+            <div class="order-status-box">Order Shipped: 5</div> <!-- Example value for order_shipped_count -->
+            <div class="order-status-box">Order Completed: 7</div> <!-- Example value for order_completed_count -->
         </div>
 
         <!-- Orders Section -->
         <section class="orders-section">
-            <h2 class="text-center mb-4">Orders</h2>
+            <h2 class="text-center mb-4">ORDERS MANAGEMENT</h2>
             <div class="orders-header">
                 <button class="sort-button">Sort by</button>
                 <input type="text" id="search-bar" placeholder="Search by Order ID" class="search-bar">
@@ -35,30 +35,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for order in orders %}
+                    <!-- Example orders -->
                     <tr>
-                        <td>{{ order.id }}</td>
-                        <td>{{ order.items }}</td>
-                        <td>{{ order.quantity }}</td>
-                        <td>{{ order.supplier_name }}</td>
-                        <td>{{ order.status }}</td>
+                        <td>1</td>
+                        <td>Item A, Item B</td>
+                        <td>3</td>
+                        <td>Supplier 1</td>
+                        <td>Placed</td>
                     </tr>
-                    {% empty %}
                     <tr>
-                        <td colspan="5" class="text-center">No orders found</td>
+                        <td>2</td>
+                        <td>Item C</td>
+                        <td>1</td>
+                        <td>Supplier 2</td>
+                        <td>Shipped</td>
                     </tr>
-                    {% endfor %}
+                    <tr>
+                        <td>3</td>
+                        <td>Item D, Item E</td>
+                        <td>4</td>
+                        <td>Supplier 3</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Item D, Item E</td>
+                        <td>4</td>
+                        <td>Supplier 3</td>
+                        <td>Placed</td>
+                    </tr>
+                    <!-- No orders found example -->
                 </tbody>
             </table>
         </section>
 
-        <!-- Order Container -->
-        <div class="order-container mt-4">
-            <div class="dropdown-btn bg-dark text-white p-2 rounded">Order &#9662;</div>
+        <div class="order-container">
+            <div id="order-details-dropdown" class="dropdown-btn">Order Details &#9662;</div>
             <div class="order-content">
                 <!-- Other order content here -->
             </div>
-            <div class="expanded-order-details">
+            <div class="expanded-order-details" style="display: none;">
                 <p>Order ID: <span id="order-id-summary"></span></p>
                 <p>Item: <span id="order-item-summary"></span></p>
                 <p>Quantity: <span id="order-quantity-summary"></span></p>
@@ -66,11 +82,13 @@
                 <p>Status: <span id="order-status-summary"></span></p>
             </div>
         </div>
-    </div>
+        
 </section>
+        
+
 
 {% endblock %}
 
 {% block extra_js %}
-    <script src="{% static 'js/ManageOrder.js' %}" defer></script>
+    <script src="{% static 'js/ManageOrders.js' %}"></script>
 {% endblock %}

@@ -3,43 +3,46 @@ from .models import *
 from .serializers import *
 from django.shortcuts import render
 from rest_framework import views
+from .forms import Inventory
 
-# Renders the Sidebar page
+def index_view(request):
+    return render(request, 'index.html')
+
 def Sidebar_view(request):
     return render(request, 'Sidebar.html')
 
-# Renders the AddMaterial page
-def AddMaterial_view(request):
-    return render(request, 'AddMaterial.html')
+def PlaceOrder_view(request):
+    return render(request, 'PlacedOrder.html')
 
-# Renders the AddProduct page
-def AddProduct_view(request):
-    return render(request, 'AddProduct.html')
-
-# Renders the Base page (could be your base template)
-def Base_view(request):
-    return render(request, 'Base.html')
-
-# Renders the ManageMaterial page
-def ManageMaterial_view(request):
-    return render(request, 'ManageMaterial.html')
-
-# Renders the ManageOrder page
 def ManageOrder_view(request):
     return render(request, 'ManageOrder.html')
 
-# Renders the ManageProduct page
+def AddMaterial_view(request):
+    form=Inventory()
+    if request.method == 'POST':
+        print('Printing Post:', request.POST)
+    context={'form':form}
+    return render(request, 'AddMaterial.html', context)
+
+def ManageMaterial_view(request):
+    return render(request, 'ManageMaterial.html')
+
+def AddProduct_view(request):
+    return render(request, 'AddProduct.html')
+
 def ManageProduct_view(request):
-    return render(request, 'ManageProduct.html')
+    return render(request, 'ManageProducts.html')
 
-# Renders the PlaceOrder page
-def PlaceOrder_view(request):
-    return render(request, 'PlaceOrder.html')
+def KitchenDisplay_view(request):
+    return render(request, 'KitchenDisplay.html')
 
-# Home view, if you have one
-def home_view(request):
-    return render(request, 'index.html')  # This should match your 'home' page template name
+def AddSupplier_view(request):
+    return render(request, 'AddSupplier.html')
+def ManageSupplier_view(request):
+    return render(request, 'ManageSupplier.html')
 
+def ExpiryDates_view(request):
+    return render(request, 'ExpiryDates.html')
 #Inventory Views
 class InventoryListCreateView(generics.ListCreateAPIView):
     queryset = Inventory.objects.all()
@@ -48,6 +51,7 @@ class InventoryListCreateView(generics.ListCreateAPIView):
 class InventoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Inventory.objects.all()
     serializer_class = InventorySerializer
+    lookup_field = 'pk'  # This uses the primary key for lookup
 
 # Supplier Views
 class SupplierListCreateView(generics.ListCreateAPIView):

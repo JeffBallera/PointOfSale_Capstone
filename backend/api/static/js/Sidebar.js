@@ -15,7 +15,9 @@
 
         // Toggle sidebar visibility
         function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
+            var sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active'); // Add logic to toggle sidebar
+        
             const mainContent = document.querySelector('.main-content');
             
             sidebar.classList.toggle('collapsed');

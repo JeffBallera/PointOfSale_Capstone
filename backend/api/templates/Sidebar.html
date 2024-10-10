@@ -1,14 +1,11 @@
-{% extends 'base.html' %}
+
 {% load static %}
 
-{% block title %}Reservation - Tikme Dine{% endblock %}
-
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/Sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'css/Sidebar.css' %}">
+
 {% endblock %}
 
-
-{% block content %}
 
 <div class="wrapper">
     {% block sidebar %}
@@ -20,6 +17,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                 </div>
+                
                 <a class="active" href="{% url 'home' %}">
                     <i class="fa fa-fw fa-home"></i><span>Dashboard</span>
                 </a>
@@ -29,8 +27,8 @@
                     <i class="fa fa-caret-down"></i> 
                 </button>
                 <div class="dropdown-container">
-                    <a href="{% url 'place-order' %}"><span>Place Order</span></a>
-                    <a href="{% url 'manage-order' %}"><span>Manage Order</span></a>
+                    <a href="{% url 'PlacedOrder' %}"><span>Place Order</span></a>
+                    <a href="{% url 'ManageOrder' %}"><span>Manage Order</span></a>
                 </div>
 
                 <button class="dropdown-btn">
@@ -38,11 +36,11 @@
                     <i class="fa fa-caret-down"></i> 
                 </button>
                 <div class="dropdown-container">
-                    <a href="{% url 'add-material' %}"><span>Add Material</span></a>
-                    <a href="{% url 'manage-material' %}"><span>Manage Material</span></a>
-                    <a href="{% url 'inventory-reports' %}"><span>Inventory Reports</span></a>
-                    <a href="{% url 'expiry-dates' %}"><span>Expiry Dates</span></a>
-                    <a href="{% url 'loss-tracking' %}"><span>Loss and Waste Tracking</span></a>
+                    <a href="{% url 'AddMaterial' %}"><span>Add Material</span></a>
+                    <a href="{% url 'ManageMaterial' %}"><span>Manage Material</span></a>
+                    <a href="{#}"><span>Inventory Reports</span></a>
+                    <a href="{% url 'ExpiryDates' %}"><span>Expiry Dates</span></a>
+                    <a href="{#}"><span>Loss and Waste Tracking</span></a>
                 </div>
 
                 <button class="dropdown-btn">
@@ -50,10 +48,19 @@
                     <i class="fa fa-caret-down"></i> 
                 </button>
                 <div class="dropdown-container">
-                    <a href="{% url 'add-product' %}"><span>Add Product</span></a>
-                    <a href="{% url 'manage-products' %}"><span>Manage Products</span></a>
-                    <a href="{% url 'menu' %}"><span>Menu</span></a>
-                    <a href="{% url 'kitchen-display' %}"><span>Kitchen Display</span></a>
+                    <a href="{% url 'AddProduct' %}"><span>Add Product</span></a>
+                    <a href="{% url 'ManageProducts' %}"><span>Manage Products</span></a>
+                    <a href="{#}"><span>Menu</span></a>
+                    <a href="{% url 'KitchenDisplay' %}"><span>Kitchen Display</span></a>
+                </div>
+
+                <button class="dropdown-btn">
+                    <i class="fa fa-fw fa-boxes"></i> <span>Supplier Management</span> 
+                    <i class="fa fa-caret-down"></i> 
+                </button>
+                <div class="dropdown-container">
+                    <a href="{% url 'AddSupplier' %}"><span>Add Supplier</span></a>
+                    <a href="{% url 'ManageSupplier' %}"><span>Manage Supplier</span></a>
                 </div>
 
                 <button class="dropdown-btn">
@@ -61,20 +68,19 @@
                     <i class="fa fa-caret-down"></i> 
                 </button>
                 <div class="dropdown-container">
-                    <a href="{% url 'analytics' %}"><span>Analytics</span></a>
+                    <a href="{#}"><span>Analytics</span></a>
                 </div>
 
                 <div class="sidebar-footer">
-                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                    <img src="{% static 'images/kup.png' %}" alt="Logo">
                     <p>v1.0.0</p>
                 </div>
             </div>
         </div>
-    {% endblock %}
-
-    <div class="content-wrapper">
-        {% block content %}
-        <!-- Main content goes here -->
-        {% endblock %}
-    </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/Sidebar.js' %}"></script>
+
+{% endblock %}
