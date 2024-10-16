@@ -1,7 +1,7 @@
 from rest_framework import generics
 from .models import *
 from .serializers import *
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework import views
 from .forms import Inventory
 
@@ -19,10 +19,7 @@ def ManageOrder_view(request):
 
 def AddMaterial_view(request):
     form=Inventory()
-    if request.method == 'POST':
-        print('Printing Post:', request.POST)
-    context={'form':form}
-    return render(request, 'AddMaterial.html', context)
+    return render(request, 'AddMaterial.html')
 
 def ManageMaterial_view(request):
     return render(request, 'ManageMaterial.html')
@@ -43,6 +40,7 @@ def ManageSupplier_view(request):
 
 def ExpiryDates_view(request):
     return render(request, 'ExpiryDates.html')
+
 #Inventory Views
 class InventoryListCreateView(generics.ListCreateAPIView):
     queryset = Inventory.objects.all()
